@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "test:e2e": "vue-cli-service test:e2e",
+    "test:e2e": "cypress run",
     "lint": "vue-cli-service lint",
     "lint-fix": "eslint . --fix",
     "commit": "git-cz",
@@ -23,9 +23,11 @@
     "vuex": "^4.0.0"
   },
   "devDependencies": {
+    "@storybook/addon-docs": "^7.0.5",
     "@storybook/addon-essentials": "7.0.5",
     "@storybook/addon-interactions": "7.0.5",
     "@storybook/addon-links": "7.0.5",
+    "@storybook/addon-postcss": "^2.0.0",
     "@storybook/blocks": "7.0.5",
     "@storybook/testing-library": "0.0.14-next.2",
     "@storybook/vue3": "7.0.5",
