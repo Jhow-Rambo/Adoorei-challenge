@@ -7,7 +7,9 @@
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lint-fix": "eslint . --fix",
+    "commit": "git-cz"
   },
   "dependencies": {
     "core-js": "^3.8.3",
@@ -35,11 +37,14 @@
     "@vue/vue3-jest": "^27.0.0-alpha.1",
     "autoprefixer": "^10.4.14",
     "babel-jest": "^27.0.6",
+    "commitizen": "^4.3.0",
     "cypress": "^9.7.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.0.3",
+    "husky": "^8.0.3",
     "jest": "^27.0.5",
     "lint-staged": "^11.1.2",
     "postcss": "^8.4.21",
@@ -52,5 +57,16 @@
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint",
+      "pre-push": "lint-fix"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
