@@ -1,0 +1,9 @@
+#!/bin/sh
+echo '🔎 Iniciando a verificação de qualidade de código...'
+npm run lint -- --fix
+if [ $? -ne 0 ]; then
+  echo '❌ Ocorreram erros de linting após a correção automática. Por favor, verifique os arquivos e corrija os erros.'
+  exit 1
+else
+  echo '✅ A verificação de qualidade de código foi realizada com sucesso!'
+fi
