@@ -1,0 +1,39 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { InputComponent } from '../components/Input.vue';
+
+<Meta title="General/InputComponent/docs" component={InputComponent} />
+
+# InputComponent
+
+Este é um componente de entrada de texto para formulários.
+
+## Props
+<table style={{ width: '100%' }}>
+  <thead>
+    <tr>
+      <th style={{ width: '20%' }}>Nome</th>
+      <th style={{ width: '20%' }}>Tipo</th>
+      <th style={{ width: '20%' }}>Obrigatório</th>
+      <th style={{ width: '40%' }}>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>label</td>
+      <td>String</td>
+      <td>Sim</td>
+      <td>Texto que descreve o campo de entrada</td>
+    </tr>
+    <tr>
+      <td>placeholder</td>
+      <td>String</td>
+      <td>Sim</td>
+      <td>Texto que aparece como espaço reservado no campo de entrada</td>
+    </tr>
+  </tbody>
+</table>
+
+## Exemplo de uso
+
+```jsx
+<InputComponent label="Nome" placeholder="Digite seu nome" />
