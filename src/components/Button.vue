@@ -1,7 +1,7 @@
 <template>
   <button
     @click="emitClickEvent"
-    class="w-full px-4 text-white rounded bg-primary-pink py-[30px]"
+    class="text-lg font-normal w-full px-4 text-white rounded bg-primary-pink py-[30px]"
   >
     {{ label }}
   </button>
