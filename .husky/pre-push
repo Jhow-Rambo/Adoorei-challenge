@@ -1,0 +1,15 @@
+#!/bin/sh
+echo '🏃‍♀️ Iniciando a execução dos testes...'
+npm run test:unit
+if [ $? -ne 0 ]; then
+  echo '❌ Os testes unitários falharam. Por favor, corrija os erros.'
+  exit 1
+fi
+
+# npm run test:e2e
+# if [ $? -ne 0 ]; then
+#   echo '❌ Os testes end-to-end falharam. Por favor, corrija os erros.'
+#   exit 1
+# else
+#   echo '✅ Todos os testes foram executados com sucesso!'
+# fi
