@@ -1,0 +1,51 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import SmartLink from "../components/SmartLink.vue";
+
+<Meta title="General/SmartLink/docs" component={SmartLink} />
+
+# SmartLink
+
+Este é um componente de link que pode ser personalizado com cores e efeitos de sublinhado.
+
+## Props
+<table style={{ width: '100%' }}>
+  <thead>
+    <tr>
+      <th style={{ width: '20%' }}>Nome</th>
+      <th style={{ width: '20%' }}>Tipo</th>
+      <th style={{ width: '20%' }}>Obrigatório</th>
+      <th style={{ width: '40%' }}>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>label</td>
+      <td>String</td>
+      <td>Não</td>
+      <td>O texto que aparece dentro do link. Se não for fornecido, o valor padrão é 'Label'.</td>
+    </tr>
+    <tr>
+      <td>underline</td>
+      <td>Boolean</td>
+      <td>Não</td>
+      <td>Define se o link deve ter sublinhado ou não. O valor padrão é 'false'.</td>
+    </tr>
+    <tr>
+      <td>primaryPink</td>
+      <td>Boolean</td>
+      <td>Não</td>
+      <td>Define se o link deve ter a cor primária de rosa ou não. O valor padrão é 'false'.</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>String</td>
+      <td>Sim</td>
+      <td>O link para onde o usuário deve ser redirecionado ao clicar no componente.</td>
+    </tr>
+  </tbody>
+</table>
+
+## Exemplo de uso
+
+```jsx
+<SmartLink href="#" label="My SmartLink" underline={true} primaryPink={false} />
