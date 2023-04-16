@@ -24,6 +24,12 @@ Este é um componente de botão para interação do usuário.
       <td>Sim</td>
       <td>Rótulo do botão que será exibido no componente.</td>
     </tr>
+    <tr>
+      <td>isPrimary</td>
+      <td>Boolean</td>
+      <td>Não</td>
+      <td>Define se o botão terá o background rosa ou branco. Caso seja true, o componente terá um background rosa. Caso contrário, será branco.</td>
+    </tr>
   </tbody>
 </table>
 
@@ -46,4 +52,4 @@ Este é um componente de botão para interação do usuário.
 ## Exemplo de uso
 
 ```jsx
-<ButtonComponent label="Clique aqui" @click="handleButtonClick" />
+<ButtonComponent label="Clique aqui" isPrimary={true} @click="handleButtonClick" />

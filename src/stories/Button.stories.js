@@ -5,6 +5,7 @@ export default {
   component: ButtonComponent,
   argTypes: {
     label: { control: "text" },
+    isPrimary: { control: "boolean" },
   },
 };
 
@@ -17,4 +18,5 @@ const Template = (args) => ({
 export const Default = Template.bind({});
 Default.args = {
   label: "Label",
+  isPrimary: true,
 };

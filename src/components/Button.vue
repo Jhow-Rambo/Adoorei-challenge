@@ -1,7 +1,11 @@
 <template>
   <button
     @click="emitClickEvent"
-    class="text-lg font-normal w-full px-4 text-white rounded bg-primary-pink py-[30px]"
+    class="text-lg font-normal w-full px-4 py-[30px]"
+    :class="{
+      'text-white rounded bg-primary-pink ': isPrimary,
+      'text-black rounded bg-white border-black border-2': !isPrimary,
+    }"
   >
     {{ label }}
   </button>
@@ -17,6 +21,10 @@ export default defineComponent({
     label: {
       type: String as PropType<IButtonProps["label"]>,
       required: true,
+    },
+    isPrimary: {
+      type: Boolean as PropType<IButtonProps["isPrimary"]>,
+      default: false,
     },
   },
   data() {

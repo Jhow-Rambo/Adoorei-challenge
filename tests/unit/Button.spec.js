@@ -20,4 +20,15 @@ describe("ButtonComponent", () => {
     await wrapper.trigger("click");
     expect(wrapper.emitted("click")).toBeTruthy();
   });
+
+  it("should change classes based on isPrimary prop", () => {
+    const label = "Clique aqui";
+    const wrapper = mount(ButtonComponent, {
+      props: { label, isPrimary: true },
+    });
+
+    expect(wrapper.classes()).toContain("text-white");
+    expect(wrapper.classes()).toContain("rounded");
+    expect(wrapper.classes()).toContain("bg-primary-pink");
+  });
 });
