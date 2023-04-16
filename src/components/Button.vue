@@ -1,6 +1,6 @@
 <template>
   <button
-    @click="emitClickEvent"
+    @click.prevent="emitClickEvent"
     class="text-lg font-normal w-full px-4 py-[30px]"
     :class="{
       'text-white rounded bg-primary-pink ': isPrimary,
@@ -26,11 +26,6 @@ export default defineComponent({
       type: Boolean as PropType<IButtonProps["isPrimary"]>,
       default: false,
     },
-  },
-  data() {
-    return {
-      buttonClass: "px-4 py-2 rounded bg-blue-500 text-white",
-    };
   },
   methods: {
     emitClickEvent() {
