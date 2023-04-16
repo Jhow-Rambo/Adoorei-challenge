@@ -1,0 +1,37 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import CheckboxComponent from "../components/Checkbox.vue";
+
+<Meta title="General/Checkbox/docs" component={CheckboxComponent} />
+
+# Componente Checkbox
+
+O componente Checkbox é um componente de caixa de seleção personalizável que permite ao usuário selecionar uma ou várias opções em uma lista de opções.
+
+## Props
+<table style={{ width: '100%' }}>
+  <thead>
+    <tr>
+      <th style={{ width: '20%' }}>Nome</th>
+      <th style={{ width: '20%' }}>Tipo</th>
+      <th style={{ width: '20%' }}>Obrigatório</th>
+      <th style={{ width: '40%' }}>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>label</td>
+      <td>String</td>
+      <td>Sim</td>
+      <td>O texto que aparece ao lado da caixa de seleção.</td>
+    </tr>
+  </tbody>
+</table>
+
+O componente também emite um evento 'update:checked' sempre que o estado do componente muda.
+
+## Exemplo de uso
+
+```jsx
+<template>
+  <CheckboxComponent label="Opção 1" />
+</template>
