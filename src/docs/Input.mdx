@@ -31,10 +31,28 @@ Este é um componente de entrada de texto para formulários.
       <td>Texto que aparece como espaço reservado no campo de entrada</td>
     </tr>
     <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>Sim</td>
+      <td>Texto referente ao nome do input</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>Sim</td>
+      <td>Texto referente ao tipo de input (email, password, text, etc)</td>
+    </tr>
+    <tr>
       <td>downLabel</td>
       <td>Object</td>
       <td>Não</td>
-      <td>Objeto com as propriedades `message` (texto do rótulo abaixo do campo de entrada) e `isOnTheRight` (booleano que indica se o rótulo abaixo do campo de entrada deve estar à direita)</td>
+      <td>Objeto com as propriedades `message` (texto do rótulo abaixo do campo de entrada), `isOnTheRight` (booleano que indica se o rótulo abaixo do campo de entrada deve estar à direita) e `smartLinkPath` (string que indica o caminho do smartLink abaixo do input. Não é obrigatório)</td>
+    </tr>
+    <tr>
+      <td>inputValidation</td>
+      <td>Object</td>
+      <td>Não</td>
+      <td>Objeto com as propriedades `isInvalid` (booleano que indica se o input esta inválido) e `message` (texto de erro a ser exibido abaixo do input. Caso a message seja undefined o valor default será "Campo obrigatório").</td>
     </tr>
   </tbody>
 </table>
@@ -42,4 +60,4 @@ Este é um componente de entrada de texto para formulários.
 ## Exemplo de uso
 
 ```jsx
-<InputComponent label="Nome" placeholder="Digite seu nome" />
+<InputComponent label="Nome" placeholder="Digite seu nome" name='name' type='text' downLabel='Seu nome'/>

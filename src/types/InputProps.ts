@@ -4,6 +4,14 @@ export default interface IInputProps {
    */
   placeholder: string;
   /**
+   * Input name
+   */
+  name: string;
+  /**
+   * which type the input has? (text, password, number, email, etc)
+   */
+  type: string;
+  /**
    * Input contents
    */
   label: string;
@@ -13,5 +21,13 @@ export default interface IInputProps {
   downLabel?: {
     message: string;
     isOnTheRight?: boolean;
+    smartLinkPath?: string;
+  };
+  /**
+   * Additional label to be displayed below the input
+   */
+  inputValidation?: {
+    isInvalid: boolean;
+    message?: string;
   };
 }
