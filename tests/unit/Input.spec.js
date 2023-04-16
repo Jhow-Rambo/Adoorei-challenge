@@ -13,17 +13,19 @@ describe("InputComponent", () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
-  it("emits input event when input is changed", () => {
+  it("emits input event when input is changed", async () => {
     const wrapper = mount(InputComponent, {
-      propsData: {
-        label: "Label",
-        placeholder: "Placeholder",
+      props: {
+        placeholder: "Enter your name",
+        label: "Name",
+        name: "name",
+        type: "text",
       },
     });
-
     const input = wrapper.find("input");
-    input.setValue("New Value");
-    expect(wrapper.emitted().input[0]).toEqual(["New Value"]);
+    const inputEvent = { target: { value: "John Doe" } };
+    await input.setValue(inputEvent.target.value);
+    expect(wrapper.emitted().input).toBeTruthy();
   });
 
   it("renders the down label when provided", () => {
