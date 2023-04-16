@@ -1,8 +1,4 @@
 <template>
-  <nav>
-    <router-link to="/">Input</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
   <router-view />
 </template>
 
@@ -12,5 +8,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
 }
 </style>
