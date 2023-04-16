@@ -2,7 +2,7 @@
   <router-link
     :to="{ path: href }"
     role="link"
-    class="text-lg font-normal leading-5 cursor-pointer hover:text-primary-orange active:text-primary-purple"
+    class="text-lg font-normal leading-5 cursor-pointer"
     :class="{
       'underline underline-offset-6': underline,
       'text-primary-pink': primaryPink,
