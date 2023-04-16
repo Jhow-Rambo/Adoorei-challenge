@@ -6,6 +6,15 @@ export default {
   argTypes: {
     label: { control: "text" },
     placeholder: { control: "text" },
+    downLabel: {
+      control: {
+        type: "object",
+        fields: {
+          message: { control: "text" },
+          isOnTheRight: { control: "boolean" },
+        },
+      },
+    },
   },
 };
 
@@ -19,4 +28,8 @@ export const Default = Template.bind({});
 Default.args = {
   label: "Label",
   placeholder: "Placeholder",
+  downLabel: {
+    message: "Hello World",
+    isOnTheRight: true,
+  },
 };
