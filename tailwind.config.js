@@ -13,6 +13,7 @@ module.exports = {
       "primary-pink": "#F30168",
       "blue-gray": "#515D74",
       "blue-gray-80": "#515D7480",
+      "ice-blue": "#E6EAF2",
       "red-error": "#FF0000",
     },
   },
