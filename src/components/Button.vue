@@ -1,7 +1,7 @@
 <template>
   <button
     @click.prevent="emitClickEvent"
-    class="text-lg font-normal w-full px-4 py-[30px]"
+    class="text-base font-normal w-full px-4 py-[30px]"
     :class="{
       'text-white rounded bg-primary-pink ': isPrimary,
       'text-black rounded bg-white border-black border-2': !isPrimary,
