@@ -1,0 +1,78 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { PlanComponent } from '../components/Plan.vue';
+
+<Meta title="Plans/Plan/docs" component={PlanComponent} />
+
+# PlanComponent
+
+Este é o componente que exibe informações sobre os planos oferecidos pelo nosso serviço.
+
+## Props
+
+<table style={{ width: '100%' }}>
+  <thead>
+    <tr>
+      <th style={{ width: '20%' }}>Nome</th>
+      <th style={{ width: '20%' }}>Tipo</th>
+      <th style={{ width: '20%' }}>Obrigatório</th>
+      <th style={{ width: '40%' }}>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>planName</td>
+      <td>String</td>
+      <td>Sim</td>
+      <td>Nome do Plano</td>
+    </tr>
+    <tr>
+      <td>price</td>
+      <td>Number</td>
+      <td>Não</td>
+      <td>Preço do plano, caso não seja passado nada será atribuido Grátis ao plano</td>
+    </tr>
+    <tr>
+      <td>description</td>
+      <td>String</td>
+      <td>Sim</td>
+      <td>Descrição do plano</td>
+    </tr>
+    <tr>
+      <td>idealFor</td>
+      <td>String</td>
+      <td>Sim</td>
+      <td>O plano é ideal para...</td>
+    </tr>
+    <tr>
+      <td>planIndex</td>
+      <td>Number</td>
+      <td>Sim</td>
+      <td>0, 1 ou 2. exibirá um dos planos mockados</td>
+    </tr>
+    <tr>
+      <td>isSelectedPlan</td>
+      <td>Boolean</td>
+      <td>Não</td>
+      <td>O plano foi selecionado? (mudanças na estilização é aplicado)</td>
+    </tr>
+    <tr>
+      <td>isMostUsedPlan</td>
+      <td>Boolean</td>
+      <td>Não</td>
+      <td>É o plano mais utilizado? (mudanças na estilização é aplicado)</td>
+    </tr>
+  </tbody>
+</table>
+
+## Exemplo de uso
+
+```jsx
+<PlanComponent
+  planName="Plano Standard"
+  price={100}
+  description="Descrição do Plano Standard"
+  idealFor="Ideal para pessoas físicas"
+  planIndex={0}
+  isSelectedPlan={true}
+  isMostUsedPlan={true}
+/>
