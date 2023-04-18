@@ -3,7 +3,7 @@
     <SectionTitle />
     <p class="text-[#0F1522] md:my-8 mt-4">Escolha seu plano</p>
     <div
-      class="flex flex-col max-w-6xl mx-4 md:space-x-4 justify-items-center md:flex-row lg:space-x-8"
+      class="flex flex-col mx-4 md:space-x-4 justify-items-center md:flex-row lg:space-x-8"
     >
       <div
         v-for="(plan, index) in plans"

@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-full border rounded border-ice-blue">
+  <div class="relative w-full max-w-sm border rounded border-ice-blue">
     <span
       v-if="isMostUsedPlan || isSelectedPlan"
       class="absolute top-0 flex items-center justify-center px-6 py-2 transform -translate-x-1/2 -translate-y-1/2 rounded-xl left-1/2 whitespace-nowrap"
@@ -15,8 +15,8 @@
       <p v-else class="text-sm font-medium text-white">PLANO ESCOLHIDO</p>
     </span>
     <div
-      class="flex flex-col items-center w-full px-6 py-8 space-y-6 overflow-hidden text-center lg:px-14"
-      :class="{ 'h-[700px]': isSelectedPlan }"
+      class="flex flex-col items-center w-full h-full max-w-sm px-6 py-8 space-y-6 overflow-hidden text-center lg:px-14"
+      :class="{ 'max-h-[1050px]': isSelectedPlan }"
     >
       <p class="text-2xl font-bold text-secondary-gray">{{ planName }}</p>
 
@@ -61,7 +61,7 @@
         v-if="isSelectedPlan"
         class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-[348px] pt-8 px-14 bg-gradient-to-t from-transparent to-white"
       >
-        <Button label="Trocar plano" class="w-full" />
+        <Button label="Trocar plano" class="w-full" @click="changePlan" />
 
         <span class="block w-full h-10 bg-white"></span>
       </div>
@@ -142,7 +142,12 @@ export default defineComponent({
         idealFor: this.idealFor,
         planIndex: this.planIndex,
       };
+      console.log(selectedPlan);
       this.$store.dispatch("selectPlan", selectedPlan);
+      this.$router.push("/user-registration");
+    },
+    changePlan() {
+      this.$router.push("/plans");
     },
   },
   mounted() {
