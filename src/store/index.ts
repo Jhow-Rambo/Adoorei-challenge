@@ -1,9 +1,12 @@
 import { createStore } from "vuex";
+import { Plan, plan } from "./modules/plan";
 
-export default createStore({
-  state: {},
-  getters: {},
-  mutations: {},
-  actions: {},
-  modules: {},
+export interface State {
+  plan: Plan;
+}
+
+export default createStore<State>({
+  modules: {
+    plan,
+  },
 });
