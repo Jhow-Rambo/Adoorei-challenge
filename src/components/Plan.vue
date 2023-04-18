@@ -79,8 +79,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
 import Button from "./Button.vue";
-// import Plan1 from "../mocks/Plan1.vue";
-import Plan1 from "@/mocks/Plan1.vue";
+import Plan1 from "../mocks/Plan1.vue";
 import Plan2 from "../mocks/Plan2.vue";
 import Plan3 from "../mocks/Plan3.vue";
 import IPlanProps from "@/types/PlanProps";

@@ -24,7 +24,6 @@ const mutations = {
 
 const actions = {
   selectPlan({ commit }: { commit: Commit }, plan: Plan) {
-    console.log(plan);
     commit("setSelectedPlan", plan);
   },
 };
