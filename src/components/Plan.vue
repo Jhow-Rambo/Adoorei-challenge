@@ -142,7 +142,6 @@ export default defineComponent({
         idealFor: this.idealFor,
         planIndex: this.planIndex,
       };
-      console.log(selectedPlan);
       this.$store.dispatch("selectPlan", selectedPlan);
       this.$router.push("/user-registration");
     },

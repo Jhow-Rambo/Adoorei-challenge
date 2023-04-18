@@ -108,13 +108,16 @@ export default defineComponent({
       };
 
       try {
-        const response = await fetch("https://fakestoreapi.com/auth/login", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(credentials),
-        });
+        const response = await fetch(
+          `${process.env.VUE_APP_API_URL}/auth/login`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(credentials),
+          }
+        );
 
         const data = await response.json();
 

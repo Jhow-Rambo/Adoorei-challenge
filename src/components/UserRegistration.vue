@@ -227,7 +227,7 @@ export default defineComponent({
       };
 
       try {
-        await fetch(`https://fakestoreapi.com/users`, {
+        await fetch(`${process.env.VUE_APP_API_URL}/users`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -235,7 +235,7 @@ export default defineComponent({
           body: JSON.stringify(credentials),
         }).then(async (response) => {
           if (response.ok) {
-            await fetch("https://fakestoreapi.com/auth/login", {
+            await fetch(`${process.env.VUE_APP_API_URL}/auth/login`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
