@@ -17,6 +17,7 @@ module.exports = {
       "ice-blue": "#E6EAF2",
       "red-error": "#FF0000",
       "light-gray": "#C4C4C480",
+      silver: "#D9D9D9",
     },
   },
   variants: {},
