@@ -4,7 +4,7 @@
       class="flex flex-col items-center justify-center w-full max-w-2xl space-y-7"
     >
       <form
-        class="w-full h-full space-y-6 border rounded-sm border-ice-blue p-7"
+        class="w-full h-full space-y-6 bg-white border rounded-sm border-ice-blue p-7"
       >
         <h2 class="text-2xl font-bold w-fit">Dados Pessoais</h2>
         <p class="text-lg font-normal text-left w-fit">

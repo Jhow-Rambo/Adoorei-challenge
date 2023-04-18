@@ -4,7 +4,9 @@
       class="flex flex-col items-center justify-center w-full max-w-2xl m-3 space-y-7"
     >
       <img src="../assets/logo.svg" />
-      <form class="w-full space-y-6 border rounded-sm border-ice-blue p-7">
+      <form
+        class="w-full space-y-6 bg-white border rounded-sm border-ice-blue p-7"
+      >
         <h2 class="text-2xl font-bold w-fit">Entre na sua conta</h2>
         <p class="text-lg font-normal text-left w-fit">
           Para acessar sua conta informe seu e-mail e senha
