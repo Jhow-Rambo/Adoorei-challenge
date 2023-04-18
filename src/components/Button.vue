@@ -1,11 +1,13 @@
 <template>
   <button
     @click.prevent="emitClickEvent"
-    class="text-base font-normal w-full px-4 py-[30px]"
+    class="w-full px-4 text-base font-normal"
     :class="{
       'text-white rounded bg-primary-pink hover:bg-dark-purple transition duration-300':
         isPrimary,
       'text-black rounded bg-white border-black border-2 ': !isPrimary,
+      'py-7': isLageButton,
+      'py-4': !isLageButton,
     }"
   >
     {{ label }}
@@ -25,6 +27,10 @@ export default defineComponent({
     },
     isPrimary: {
       type: Boolean as PropType<IButtonProps["isPrimary"]>,
+      default: false,
+    },
+    isLageButton: {
+      type: Boolean,
       default: false,
     },
   },

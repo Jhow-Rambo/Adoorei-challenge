@@ -36,7 +36,12 @@
           }"
           @input="getValue"
         />
-        <Button label="FAZER LOGIN" :is-primary="true" @click="handleLogin" />
+        <Button
+          label="FAZER LOGIN"
+          :is-primary="true"
+          @click="handleLogin"
+          :is-lage-button="true"
+        />
       </form>
       <div class="flex">
         <p class="mr-1 text-primary-gray">Ainda não tem conta?</p>

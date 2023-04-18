@@ -110,7 +110,12 @@
           >
         </div>
 
-        <Button label="CRIAR CONTA" :is-primary="true" @click="registerUser" />
+        <Button
+          label="CRIAR CONTA"
+          :is-primary="true"
+          @click="registerUser"
+          :is-lage-button="true"
+        />
       </form>
     </div>
   </div>
