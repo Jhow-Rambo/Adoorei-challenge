@@ -21,7 +21,9 @@
     <p class="mr-1 text-base font-bold leading-5 text-primary-gray text-start">
       Migração Gratuita;
     </p>
-    <ul class="space-y-4 text-lg font-normal text-start text-secondary-gray">
+    <ul
+      class="mb-4 space-y-4 text-lg font-normal text-start text-secondary-gray"
+    >
       <li class="flex align-text-top">
         <CheckIcon fillColor="#292D32" size="15" class="mt-1 mr-2" />Migramos
         todos seus sites para nossos servidores;
@@ -70,7 +72,7 @@ import { defineComponent } from "vue";
 import CheckIcon from "vue-material-design-icons/Check.vue";
 
 export default defineComponent({
-  name: "CommonComponent",
+  name: "SharedDescriptionComponent",
   components: {
     CheckIcon,
   },
