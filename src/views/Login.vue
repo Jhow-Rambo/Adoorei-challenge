@@ -113,7 +113,9 @@ export default defineComponent({
 
         const token = data.token;
 
-        localStorage.setItem("authToken", token);
+        localStorage.setItem("token", token);
+
+        this.$router.push("/home");
       } catch (error) {
         console.error(error);
       }
