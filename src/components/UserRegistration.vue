@@ -1,9 +1,11 @@
 <template>
-  <div class="flex justify-center w-full h-screen">
+  <div class="flex justify-center w-full h-full">
     <div
-      class="flex flex-col items-center justify-center w-full max-w-2xl m-3 space-y-7"
+      class="flex flex-col items-center justify-center w-full max-w-2xl space-y-7"
     >
-      <form class="w-full space-y-6 border rounded-sm border-ice-blue p-7">
+      <form
+        class="w-full h-full space-y-6 border rounded-sm border-ice-blue p-7"
+      >
         <h2 class="text-2xl font-bold w-fit">Dados Pessoais</h2>
         <p class="text-lg font-normal text-left w-fit">
           Informe seus dados pessoais para acesso à sua conta
@@ -139,7 +141,6 @@ export default defineComponent({
     SmartLink,
     Button,
   },
-  props: {},
   data() {
     return {
       userData: {
@@ -178,9 +179,9 @@ export default defineComponent({
     getValue(e: InputEvent) {
       const element = e.target as HTMLInputElement;
       const fieldName = element.name as keyof typeof this.userData;
-      let fieldValue =
+      let fieldValue: string | boolean | null =
         element.type === "checkbox" ? element.checked : element.value;
-      this.userData[fieldName] = fieldValue;
+      (this.userData as Record<string, unknown>)[fieldName] = fieldValue;
     },
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
