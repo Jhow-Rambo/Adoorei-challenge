@@ -110,7 +110,7 @@
           >
         </div>
 
-        <Button label="CRIAR CONTA" :is-primary="true" @click="handleLogin" />
+        <Button label="CRIAR CONTA" :is-primary="true" @click="registerUser" />
       </form>
     </div>
   </div>
@@ -193,7 +193,7 @@ export default defineComponent({
         : "Campo inválido";
     },
 
-    async handleLogin() {
+    async registerUser() {
       this.v$.userData.$touch();
 
       if (this.v$.userData.$invalid) {
@@ -222,15 +222,34 @@ export default defineComponent({
       };
 
       try {
-        const response = await fetch(`https://fakestoreapi.com/users`, {
+        await fetch(`https://fakestoreapi.com/users`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(credentials),
-        });
+        }).then(async (response) => {
+          if (response.ok) {
+            await fetch("https://fakestoreapi.com/auth/login", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                username: "mor_2314",
+                password: "83r5^_",
+              }),
+            });
 
-        response.status === 200 && this.$router.push("/");
+            const data = await response.json();
+
+            const token = data.token;
+
+            localStorage.setItem("token", token);
+
+            this.$router.push("/home");
+          }
+        });
       } catch (error) {
         console.error(error);
       }
