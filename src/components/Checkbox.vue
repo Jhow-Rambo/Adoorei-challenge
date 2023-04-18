@@ -11,7 +11,7 @@
         :checked="isChecked"
         @input="handleChange"
       />
-      <CheckIcon v-if="isChecked" fillColor="#F30168" size="15" />
+      <CheckIcon v-if="isChecked" fillColor="#F30168" :size="15" />
     </label>
 
     <span class="ml-2 text-primary-gray">{{ label }}</span>
