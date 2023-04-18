@@ -41,7 +41,7 @@
         <SmartLink
           label="Cadastre-se"
           :underline="true"
-          href="#"
+          href="/plans"
           :primary-pink="true"
         />
       </div>
