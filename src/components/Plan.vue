@@ -1,5 +1,5 @@
 <template>
-  <div class="relative max-w-[348px] border rounded border-ice-blue">
+  <div class="relative w-full border rounded border-ice-blue">
     <span
       v-if="isMostUsedPlan || isSelectedPlan"
       class="absolute top-0 flex items-center justify-center px-6 py-2 transform -translate-x-1/2 -translate-y-1/2 rounded-xl left-1/2 whitespace-nowrap"
@@ -15,7 +15,7 @@
       <p v-else class="text-sm font-medium text-white">PLANO ESCOLHIDO</p>
     </span>
     <div
-      class="flex flex-col items-center w-full py-8 space-y-6 overflow-hidden text-center px-14"
+      class="flex flex-col items-center w-full px-6 py-8 space-y-6 overflow-hidden text-center lg:px-14"
       :class="{ 'h-[700px]': isSelectedPlan }"
     >
       <p class="text-2xl font-bold text-secondary-gray">{{ planName }}</p>
@@ -67,7 +67,11 @@
       </div>
 
       <div v-else>
-        <Button label="ESCOLHER ESSE PLANO" :is-primary="true" />
+        <Button
+          label="ESCOLHER ESSE PLANO"
+          :is-primary="true"
+          @click="choosePlan"
+        />
       </div>
     </div>
   </div>
@@ -75,7 +79,8 @@
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
 import Button from "./Button.vue";
-import Plan1 from "../mocks/Plan1.vue";
+// import Plan1 from "../mocks/Plan1.vue";
+import Plan1 from "@/mocks/Plan1.vue";
 import Plan2 from "../mocks/Plan2.vue";
 import Plan3 from "../mocks/Plan3.vue";
 import IPlanProps from "@/types/PlanProps";
@@ -129,6 +134,16 @@ export default defineComponent({
   methods: {
     toggleShowPlan() {
       this.showPlan = !this.showPlan;
+    },
+    choosePlan() {
+      const selectedPlan = {
+        planName: this.planName,
+        price: this.price,
+        description: this.description,
+        idealFor: this.idealFor,
+        planIndex: this.planIndex,
+      };
+      this.$store.dispatch("selectPlan", selectedPlan);
     },
   },
   mounted() {
