@@ -39,6 +39,14 @@
         </p>
       </div>
 
+      <div v-if="!isSelectedPlan">
+        <Button
+          label="ESCOLHER ESSE PLANO"
+          :is-primary="true"
+          @click="choosePlan"
+        />
+      </div>
+
       <p
         v-if="showPlan === false"
         class="text-lg font-bold cursor-pointer text-secondary-gray md:hidden"
@@ -46,8 +54,6 @@
       >
         Ver mais
       </p>
-
-      <component :is="planDescription[planIndex]" v-if="showPlan" />
 
       <p
         v-if="showPlan === true"
@@ -57,6 +63,8 @@
         Ver menos
       </p>
 
+      <component :is="planDescription[planIndex]" v-if="showPlan" />
+
       <div
         v-if="isSelectedPlan"
         class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-[348px] pt-8 px-14 bg-gradient-to-t from-transparent to-white"
@@ -64,14 +72,6 @@
         <Button label="Trocar plano" class="w-full" @click="changePlan" />
 
         <span class="block w-full h-10 bg-white"></span>
-      </div>
-
-      <div v-else>
-        <Button
-          label="ESCOLHER ESSE PLANO"
-          :is-primary="true"
-          @click="choosePlan"
-        />
       </div>
     </div>
   </div>
