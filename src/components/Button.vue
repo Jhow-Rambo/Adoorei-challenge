@@ -3,8 +3,9 @@
     @click.prevent="emitClickEvent"
     class="text-base font-normal w-full px-4 py-[30px]"
     :class="{
-      'text-white rounded bg-primary-pink ': isPrimary,
-      'text-black rounded bg-white border-black border-2': !isPrimary,
+      'text-white rounded bg-primary-pink hover:bg-dark-purple transition duration-300':
+        isPrimary,
+      'text-black rounded bg-white border-black border-2 ': !isPrimary,
     }"
   >
     {{ label }}

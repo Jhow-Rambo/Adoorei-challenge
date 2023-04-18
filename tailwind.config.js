@@ -18,6 +18,8 @@ module.exports = {
       "red-error": "#FF0000",
       "light-gray": "#C4C4C480",
       silver: "#D9D9D9",
+      "dark-purple": "#331d59",
+      "off-white": "#fafafa",
     },
   },
   variants: {},
