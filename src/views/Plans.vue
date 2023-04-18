@@ -9,6 +9,7 @@
         v-for="(plan, index) in plans"
         :key="index"
         class="w-full my-4 md:w-fit md:my-0"
+        :class="{ 'order-first md:order-none': index === 1 }"
       >
         <Plan
           :description="plan.description"
@@ -16,6 +17,7 @@
           :idealFor="plan.idealFor"
           :planIndex="plan.planIndex"
           :price="plan.price"
+          :isMostUsedPlan="plan.isMostUsedPlan"
         />
       </div>
     </div>
@@ -49,6 +51,7 @@ export default defineComponent({
           planName: "Hospedagem 2",
           idealFor: "Ideal para site com mais mais de 30k de visitas.",
           planIndex: 1,
+          isMostUsedPlan: true,
         },
         {
           price: 999,
