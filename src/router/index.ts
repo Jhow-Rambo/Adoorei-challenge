@@ -1,25 +1,50 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import {
+  createRouter,
+  createWebHistory,
+  RouteRecordRaw,
+  NavigationGuard,
+} from "vue-router";
+import Login from "../views/Login.vue";
+import Plans from "../views/Plans.vue";
+import Registration from "../views/Registration.vue";
+import Home from "../views/Home.vue";
+
+const authGuard: NavigationGuard = (to, from, next) => {
+  const token = localStorage.getItem("token");
+
+  if (!token) {
+    next({ path: "/" });
+  } else {
+    next();
+  }
+};
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    name: "home",
-    component: HomeView,
+    name: "login",
+    component: Login,
   },
   {
-    path: "/about",
-    name: "about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+    path: "/plans",
+    name: "plans",
+    component: Plans,
+  },
+  {
+    path: "/user-registration",
+    name: "userRegistration",
+    component: Registration,
+  },
+  {
+    path: "/home",
+    name: "HomePage",
+    component: Home,
+    beforeEnter: authGuard,
   },
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
 });
 

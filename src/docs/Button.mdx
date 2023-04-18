@@ -1,0 +1,55 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { ButtonComponent } from '../components/Button.vue';
+
+<Meta title="General/ButtonComponent/docs" component={ButtonComponent} />
+
+# ButtonComponent
+
+Este é um componente de botão para interação do usuário.
+
+## Props
+<table style={{ width: '100%' }}>
+  <thead>
+    <tr>
+      <th style={{ width: '20%' }}>Nome</th>
+      <th style={{ width: '20%' }}>Tipo</th>
+      <th style={{ width: '20%' }}>Obrigatório</th>
+      <th style={{ width: '40%' }}>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>label</td>
+      <td>String</td>
+      <td>Sim</td>
+      <td>Rótulo do botão que será exibido no componente.</td>
+    </tr>
+    <tr>
+      <td>isPrimary</td>
+      <td>Boolean</td>
+      <td>Não</td>
+      <td>Define se o botão terá o background rosa ou branco. Caso seja true, o componente terá um background rosa. Caso contrário, será branco.</td>
+    </tr>
+  </tbody>
+</table>
+
+## Eventos
+<table style={{ width: '100%' }}>
+  <thead>
+    <tr>
+      <th style={{ width: '30%' }}>Nome</th>
+      <th style={{ width: '70%' }}>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>@click</td>
+      <td>Evento emitido quando o botão é clicado.</td>
+    </tr>
+  </tbody>
+</table>
+
+## Exemplo de uso
+
+```jsx
+<ButtonComponent label="Clique aqui" isPrimary={true} @click="handleButtonClick" />
