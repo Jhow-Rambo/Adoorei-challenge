@@ -36,6 +36,11 @@
           }"
           @input="getValue"
         />
+        <span
+          v-show="invalidCredentials"
+          class="w-full font-medium text-red-error text-start"
+          >Credenciais inválidas!</span
+        >
         <Button
           label="FAZER LOGIN"
           :is-primary="true"
@@ -79,6 +84,7 @@ export default defineComponent({
         username: "",
         password: "",
       },
+      invalidCredentials: false,
     };
   },
   validations() {
@@ -118,6 +124,8 @@ export default defineComponent({
             body: JSON.stringify(credentials),
           }
         );
+        console.log(response.status);
+        if (response.status === 401) this.invalidCredentials = true;
 
         const data = await response.json();
 
