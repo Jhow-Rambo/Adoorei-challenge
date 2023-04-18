@@ -6,9 +6,10 @@
       <input
         type="checkbox"
         role="checkbox"
+        :name="name"
         class="appearance-none"
         :checked="isChecked"
-        @change="handleChange"
+        @input="handleChange"
       />
       <CheckIcon v-if="isChecked" fillColor="#F30168" size="15" />
     </label>
@@ -36,13 +37,16 @@ export default defineComponent({
       type: String,
       required: true,
     },
+    name: {
+      type: String,
+      required: true,
+    },
   },
   emits: ["update:checked"],
   methods: {
     handleChange(event: Event) {
       this.isChecked = !this.isChecked;
-      const target = event.target as HTMLInputElement;
-      this.$emit("update:checked", target.checked);
+      this.$emit("update:checked", event);
     },
   },
 });
