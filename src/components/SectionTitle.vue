@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col items-center justify-center w-full max-w-2xl space-y-7"
+    class="flex flex-col items-center justify-center w-full max-w-2xl mb-5 space-y-7"
   >
     <img src="../assets/logo.svg" />
     <div class="flex max-w-xl text-2xl font-bold text-center">
