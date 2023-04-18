@@ -22,7 +22,8 @@
         <label
           v-if="!downLabel.smartLinkPath"
           for="input"
-          class="w-fit text-blue-gray"
+          class="w-fit text-blue-gray text-start"
+          :class="{ 'text-end': downLabel && downLabel.isOnTheRight }"
           >{{ downLabel.message }}</label
         >
         <router-link
@@ -30,6 +31,7 @@
           :to="downLabel.smartLinkPath"
           role="link"
           class="cursor-pointer w-fit text-blue-gray"
+          :class="{ 'text-end': downLabel && downLabel.isOnTheRight }"
         >
           {{ downLabel.message }}
         </router-link>
